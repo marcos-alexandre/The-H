@@ -33,10 +33,10 @@ try:
         nickname_do_usuario = raw_input("\tDigite seu nickname --: ") # Pega nickname do usuario
         print "\t\t Seja Bem Vindo { "+ '\033[31m' + nickname_do_usuario + '\033[0;0m'+" }"
         print
-        print("\t\t\tTool Desenvolvida para achar painel de Admin\n")
+        print("\t\t\tScript Simples Desenvolvida para achar painel de Admin\n")
         print
         print("As página que le achar se destacada!!!!\n")
-        ################ Dicionario de palavra para achar painel de Admin em site php
+        ################ Dicionario de palavra para achar painel de Admin 
         pagina = ['admin.php','admin',
                   'painel','login',
                   'admin-login','admin-index',
@@ -49,8 +49,8 @@ try:
 
                   ]
 
-        valor1 = 0
-        valor2 = 0
+        valor1 = 0 # vai receber o numero de pg encontradas
+        valor2 = 0 # vai receber valor de pg testada
         try:
             site = raw_input("\tinforme o Site: ")
             site = site.replace("http://","")
@@ -64,10 +64,10 @@ try:
         continuar = raw_input("quer continuar? y ou n: ")
         if continuar == "y" :
             print("\t [+] Scaneando: " + site + "....")
-            for admin in pagina:
-                admin = admin.replace("\n","")
-                admin = "/" + admin
-                host = site + admin
+            for url in pagina:
+                url = url.replace("\n","")
+                url = "/" + url
+                host = site + url
                 print("\t [#] Olhando: " + host + "....")
                 conexao = httplib.HTTPConnection(site)
                 conexao.request("GET",admin)
@@ -91,6 +91,6 @@ try:
                 print valor2, "Total de Páginas Escaneadas"
 
 except (httplib.HTTPResponse, socket.error):
-    print "\n\t[!] Sessão cancelada"
+    print "\n\t[!] cancelada"
 except (KeyboardInterrupt, SystemExit):
-    print "\n\t[!] Sessão cancelada"
+    print "\n\t[!] cancelada"
