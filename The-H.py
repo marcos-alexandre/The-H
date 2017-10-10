@@ -70,7 +70,7 @@ try:
                 host = site + url
                 print("\t [#] Olhando: " + host + "....")
                 conexao = httplib.HTTPConnection(site)
-                conexao.request("GET",admin)
+                conexao.request("GET",url)
                 responder = conexao.getresponse()
                 valor2 = valor2 + 1
                 ### mostrando pagina Encontrada
